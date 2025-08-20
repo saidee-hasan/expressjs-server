@@ -7,12 +7,12 @@ const PORT = 3000;
 // Middleware to parse JSON
 app.use(express.json());
 
-// Routes
-app.use("/products", productRoutes); // All product routes prefixed with /api/products
+// Product routes
+app.use("/products", productRoutes);
 
-// Optional root route
+// Root route
 app.get("/", (req, res) => {
-  res.send("Welcome to the API!");
+  res.send("Welcome to the Products API!");
 });
 
 // Start server

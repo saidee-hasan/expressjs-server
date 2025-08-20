@@ -1,6 +1,6 @@
 import express from "express";
-import productRoutes from "./routes/product.routes";
-import orderRoutes from "./routes/order.routes";
+import productRoutes from "./app/routes/product.routes";
+import orderRoutes from "./app/routes/order.routes";
 
 const app = express();
 const PORT = 3000;

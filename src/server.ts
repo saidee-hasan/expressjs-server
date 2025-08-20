@@ -1,15 +1,21 @@
-import { Server, createServer, IncomingMessage, ServerResponse } from "http";
-import { routeHandler } from "./routes/product.routes";
+import express from "express";
+import productRoutes from "./routes/product.routes";
 
+const app = express();
+const PORT = 3000;
 
-let server: Server;
+// Middleware to parse JSON
+app.use(express.json());
 
+// Routes
+app.use("/products", productRoutes); // All product routes prefixed with /api/products
 
-server = createServer((req, res) => {
-routeHandler(req,res)
+// Optional root route
+app.get("/", (req, res) => {
+  res.send("Welcome to the API!");
 });
 
-// Start listening on port 3000
-server.listen(3000, () => {
-  console.log("Server running at http://localhost:3000/");
+// Start server
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}/`);
 });

@@ -4,21 +4,25 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "lint": "eslint 'src/**/*.{ts,tsx}' --fix",
+    "format": "prettier --write 'src/**/*.{ts,tsx,json,css,md}'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@eslint/js": "^9.33.0",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.8",
     "@types/node": "^24.3.0",
-    "eslint": "^9.33.0",
-    "eslint-plugin-react": "^7.37.5",
-    "globals": "^16.3.0",
-    "jiti": "^2.5.1",
     "ts-node-dev": "^2.0.0",
-    "typescript-eslint": "^8.40.0"
+    "typescript": "^5.2.0",
+    "@types/express": "^4.17.17"
   },
   "dependencies": {
     "express": "^5.1.0"

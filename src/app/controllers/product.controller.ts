@@ -15,11 +15,7 @@ export const getProductById = (req: Request, res: Response) => {
   else res.status(404).send('Product not found');
 };
 
-export const createProduct = (req: Request, res: Response) => {
-  const newProduct = { id: Date.now(), name: req.body.name };
-  products.push(newProduct);
-  res.status(201).json(newProduct);
-};
+
 
 export const updateProduct = (req: Request, res: Response) => {
   const id = Number(req.params.id);

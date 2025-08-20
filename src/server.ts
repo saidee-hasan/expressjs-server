@@ -1,21 +1,21 @@
 import express from "express";
 import productRoutes from "./routes/product.routes";
+import orderRoutes from "./routes/order.routes";
 
 const app = express();
 const PORT = 3000;
 
-// Middleware to parse JSON
 app.use(express.json());
 
-// Product routes
+// Routes
 app.use("/products", productRoutes);
+app.use("/orders", orderRoutes);
 
 // Root route
 app.get("/", (req, res) => {
-  res.send("Welcome to the Products API!");
+  res.send("Welcome to the API!");
 });
 
-// Start server
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}/`);
 });
